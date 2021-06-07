@@ -1,0 +1,42 @@
+
+
+
+
+
+<h3>Post Your Solutions here</h3>
+<div class="container">
+    <div class="row">
+        
+    </div>
+</div>
+  
+<div [hidden]="submitted" style="width: 400px;">
+    <div class="card" style="width:25rem">
+        <label  for="name">Select Query</label><br/>
+        <select  [(ngModel)]=sol.SolutionForQueryQueryID>
+          <option value="0" disabled>Select Category</option>
+            <option *ngFor="let hd of queries" value="{{hd.queryID}}">{{hd.qContent}}</option>
+        </select>
+       </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="card" style="width:25rem">
+      <label for="name">Enter Your Solution Here</label><br/>
+      <input type="text"  [(ngModel)]=sol.sContent name="sContent" width="200px" height="200px">
+        </div>
+       <div class="card" style="width:25rem">
+       <img [src]="imageUrl"  style="width:250px;height:200px">
+       <input type="file" [(ngModel)]=fileToUpload accept="image/*" (change)="handleFileInput($event.target.files)"/>
+    </div>
+  
+
+    <button  class="btn btn-success" type="submit" >Submit</button>
+  </form>
+</div>
+
+<a routerLink="/fp" routerLinkActice="active">Go to Main Page </a>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+

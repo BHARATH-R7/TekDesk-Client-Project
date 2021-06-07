@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <h4 class="card-title">
+            <strong>Welcome {{ employee.username| uppercase}}</strong>
+          </h4>
+      
+    <a mdbBtn routerLink="/fp" class="nav-link" routerLinkActive="active" color="red" mdbWavesEffect>Logout</a>
+  
+    </ul>
+  </nav>
+
+<div class="row">
+    <div class="col-md-4">
+      <!--Card-->
+      <mdb-card cascade="true" wider="true">
+  
+        <!--Card image-->
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+          <mdb-card-img src="https://cdn0.iconfinder.com/data/icons/round-action-bar/48/search-512.png"></mdb-card-img>
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--/Card image-->
+  
+        <mdb-card-body cascade="true" class="text-center">
+          <!--Card content-->
+          <!--Title-->
+          <h4 class="card-title">
+            <strong>View Your Queries Here</strong>
+          </h4>
+          
+  
+          <mdb-card-text>
+            Employee can view the query updated and solutions for the updated query and the query status.
+          </mdb-card-text>
+          <a mdbBtn color="unique"  class="waves-light" mdbWavesEffect routerLink="/viewQuery/{{id}}" routerLinkActive="active" >View Queries</a>
+  
+         
+        </mdb-card-body>
+        <!--/.Card content-->
+  
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+  
+    <div class="col-md-4">
+      <!--Card-->
+      <mdb-card cascade="true" narrower="true">
+  
+        <!--Card image-->
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+          <mdb-card-img src="https://www.entrypoint.cz/files/2814/4240/8640/questions-reponses-profits.jpg"></mdb-card-img>
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--/Card image-->
+  
+        <mdb-card-body cascade="true" class="text-center">
+          <!--Card content-->
+          <h5 class="pink-text">
+            <mdb-icon fas icon="utensils"></mdb-icon></h5>
+          <!--Title-->
+          <h4 class="card-title">Raise a Query Here</h4>
+          <!--Text-->
+  
+          <mdb-card-text>
+            Employee Can Ask Any Technical or Non Technical Related Query Here.
+          </mdb-card-text>
+  
+          <a mdbBtn color="unique"  class="waves-light" mdbWavesEffect routerLink="/postQuery/{{id}}" routerLinkActive="active" >Raise Query</a>
+  
+        </mdb-card-body>
+        <!--/.Card content-->
+  
+      </mdb-card>
+      
+   
+    </div>
+  
+   
+     
+    
+  </div>

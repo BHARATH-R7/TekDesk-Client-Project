@@ -1,0 +1,39 @@
+
+
+<div [hidden]="submitted" style="width: 400px;" class="text-center border border-light p-5">
+  <p class="h4 mb-4">Update a Query Deatils Here</p>
+  <label>Select Category</label>
+  <select [(ngModel)]=query.categoryCategoriesID class="browser-default custom-select mb-4" disabled placeholder="Choose">
+    <option value="" disabled >Choose option</option>
+  <option *ngFor="let hd of category" value="{{hd.categoriesID}}">{{hd.catName}}</option>
+  </select>
+
+  <form (ngSubmit)="onSubmit()" >
+  
+    <div class="form-group">
+      <textarea class="form-control rounded-0" [(ngModel)]=query.qContent name="qContent"  rows="3" placeholder="Enter details about query"></textarea>
+    </div>
+  
+    <!-- Copy -->
+ <!--   <div class="row">
+      <div class="col-md-6 mx-auto d-flex justify-content-center">
+        <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
+      </div>
+    </div>-->
+  
+  
+    <!-- Send button -->
+    <button mdbBtn color="success" block="true" type="submit">Update</button>
+  
+  </form>
+  </div>
+  <!-- <a routerLink="/viewQuery/1"  mdbBtn color="blue"  class="waves" mdbWavesEffect routerLinkActice="active">Back to All Queries</a> -->
+  <button (click)="employee1()" mdbBtn color="unique" style="margin-left: 10px">Back to All Queries</button>
+  
+  
+  <div [hidden]="!submitted" class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+  
+    <hr>
+    <p class="mb-0">You Updated successfully!</p>
+  </div>

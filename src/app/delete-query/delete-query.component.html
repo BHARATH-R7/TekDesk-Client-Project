@@ -1,0 +1,52 @@
+
+<h2>Query Details</h2> 
+
+<hr/>
+
+<div class="row">
+  <div class="col-md-4">
+    <!--Card-->
+    <mdb-card cascade="true" wider="true">
+
+      <!--Card image-->
+      
+      <!--/Card image-->
+
+      <mdb-card-body cascade="true" class="text-left">
+        <!--Card content-->
+        <!--Title-->
+        <h4 class="card-title">
+          <strong>Query Details</strong>
+        </h4>
+        
+
+        <mdb-card-text>
+          <div *ngIf="query">
+            <div>
+              <label><b>Query Details: </b></label> {{query.qContent}}
+            </div>
+            <div>
+              <label><b>Status: </b></label> {{query.status}}
+            </div>
+            <div>
+              <label><b>Solution : </b></label> {{query.sContent}}
+            </div>  
+            <div>
+              <label><b>Attachments : </b></label> {{query.references}}
+            </div>  
+          </div>
+        </mdb-card-text>
+        <!-- <a mdbBtn color="unique"  class="waves-light" mdbWavesEffect routerLink="/viewQuery/" routerLinkActive="active" >Back to All Queries</a> -->
+        <button (click)="employee1()" mdbBtn color="unique" style="margin-left: 10px">Back to All Queries</button>
+       
+      </mdb-card-body>
+      <!--/.Card content-->
+
+    </mdb-card>
+    <!--/.Card-->
+  </div>
+<div class="card">
+    <h3 >Are You Sure want to delete the displayed Query??</h3>
+    <button (click)="deleteQuery(query.queryID)" class="btn btn-danger" style="margin-left: 10px">YES</button>
+    <button (click)="reloadData()" class="btn btn-success" style="margin-left: 10px">NO</button>
+</div>

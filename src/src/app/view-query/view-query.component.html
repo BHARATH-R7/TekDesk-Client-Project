@@ -1,0 +1,53 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>All Your Queries</h2> 
+      <a mdbBtn color="blue"  class="waves-light" mdbWavesEffect routerLink="/Dashboard/{{empid}}" routerLinkActive="active" >Click Here For DashBoard</a>
+    </div>
+    <div> Search : <input type="text" [(ngModel)]=searchString> </div> 
+   
+    <div class="panel-body">
+      <table class="table table-striped">
+       
+        <thead>
+          <tr>
+           <th>Category</th>
+            <th>Query</th>
+            <th>Status</th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        
+
+        <tbody>
+
+          <tr *ngFor="let q of query |ListFilter : searchString |paginate:{itemsPerPage:count, currentPage:p}">
+          <ng-container *ngFor="let cat of category ">
+            <td *ngIf="cat.categoriesID==q.cat">
+              {{cat.catName}}
+            </td>
+            </ng-container>
+            <td>{{q.qContent}}</td>
+            <td>{{q.status}}</td>
+            <td>{{q.sContent}}</td>
+            <td *ngIf="q.status=='OPEN';else elseBlock">
+                <button (click)="onClick(q.queryID)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                <button (click)="onUpdate(q.queryID)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                <button (click)="deleteQuery(q.queryID)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+            <ng-template #elseBlock>
+              <td>
+             
+              <button (click)="onClick(q.queryID)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              <button (click)="deleteQuery(q.queryID)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>

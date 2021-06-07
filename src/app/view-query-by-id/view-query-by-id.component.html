@@ -1,0 +1,52 @@
+
+<div class="d-flex justify-content-center">
+
+  <div class="col-md-8">
+    <!--Card-->
+    <mdb-card cascade="true" wider="true">
+
+      <!--Card image-->
+      
+      <!--/Card image-->
+
+      <mdb-card-body cascade="true" class="text-left">
+        <!--Card content-->
+        <!--Title-->
+        <h4 class="card-title">
+          <strong>Query Details</strong>
+        </h4>
+        
+
+        <mdb-card-text>
+          <div *ngIf="query">
+            <div>
+              <label><b>Query?: </b></label> {{query.qContent}}
+            </div>
+            <div>
+              <label><b>Status: </b></label> {{query.status}}
+            </div>
+            <div>
+              <label><b>Solution : </b></label> {{query.sContent}}
+            </div>  
+            <div>
+              <label><b>Image Preview: </b></label><br><img [src]="createImgPath(query.references)" alt="file format not support for preview" height="300px" width="450px">
+            </div> 
+            <br>
+            <div>
+              <label><b>Attachment </b></label><a [download]="createImgPath(query.references)" [href]="createImgPath(query.references)">Click For Full Screen View</a>
+            </div>  
+          </div>
+        </mdb-card-text>
+        <!-- <a mdbBtn color="unique"  class="waves-light" mdbWavesEffect routerLink="/../viewQuery/1" routerLinkActive="active" >Back to All Queries</a> -->
+        <button (click)="employee1()" mdbBtn color="unique" style="margin-left: 10px">Back to All Queries</button>
+       
+      </mdb-card-body>
+      <!--/.Card content-->
+
+
+
+    </mdb-card>
+    <!--/.Card-->
+  </div>
+
+</div>
