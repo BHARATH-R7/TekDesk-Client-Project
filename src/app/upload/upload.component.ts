@@ -25,7 +25,7 @@ export class UploadComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
 
-    this.http.post('https://localhost:44339/api/Upload', formData, {reportProgress: true, observe: 'events'})
+    this.http.post('https://localhost:44308/api/Upload', formData, {reportProgress: true, observe: 'events'})
       .subscribe(event => {
         console.log(event) //to check dbpath
         if (event.type === HttpEventType.UploadProgress)

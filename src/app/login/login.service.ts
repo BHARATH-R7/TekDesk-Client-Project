@@ -9,7 +9,7 @@ import { Employee } from "./Employee";
 export class LoginService{
 
     constructor(private http:HttpClient){}
-private url="https://localhost:44339/api/Employees";
+private url="https://localhost:44308/api/Employees";
 
 login(loginData):Observable<Employee>{
     return this.http.post<Employee>(this.url,loginData);

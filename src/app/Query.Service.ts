@@ -7,8 +7,8 @@ import { Category, query } from "./Query";
     providedIn:'root'
 })
 export class QueryService {
-    private QueryUrl="https://localhost:44339/api/Queries";
-    private CatUrl="https://localhost:44339/api/Categories";
+    private QueryUrl="https://localhost:44308/api/Queries";
+    private CatUrl="https://localhost:44308/api/Categories";
 
     constructor(private http:HttpClient){}
     httpOptions={

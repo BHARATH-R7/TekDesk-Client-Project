@@ -48,7 +48,7 @@ export class PostSolutionComponent implements OnInit {
       references:this.response.dbPath,//to retreive image
       solutionForQueryID:this.solutionForQueryID
     }
-    this.http.post('https://localhost:44339/api/Solutions', this.sol)
+    this.http.post('https://localhost:44308/api/Solutions', this.sol)
     .subscribe(res => {
       console.log(res)
     });

@@ -8,8 +8,8 @@ import { Solution } from "./Solution";
     providedIn:'root'
 })
 export class SolutionService{
-    private solUrl="https://localhost:44339/api/Solutions";
-    private qUrl="https://localhost:44339/api/Queries";
+    private solUrl="https://localhost:44308/api/Solutions";
+    private qUrl="https://localhost:44308/api/Queries";
 
     constructor(private http:HttpClient){}
     httpOptions={
